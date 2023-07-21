@@ -1,0 +1,61 @@
+1.
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double m;
+        double n;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первое число");
+        m = scanner.nextDouble();
+
+        System.out.print("Введите второе число");
+        n = scanner.nextDouble();
+
+        double mPos = m -10;
+        double nPos = n -10;
+
+        if (mPos < 0) {
+            mPos = -mPos;
+        }
+        if (nPos < 0) {
+            nPos = -nPos;
+        }
+
+        if (mPos < nPos) {
+            System.out.println("Число " + m + " ближе к 10");
+        } else if (nPos < mPos) {
+            System.out.println("Число " + n + " ближе к 10");
+        } else {
+            System.out.println("Два числа одинаково ближе к 10");
+        }
+    }
+}
+
+2.
+
+import java.util.Scanner;
+
+public class JavaHW {
+    public static void main(String[] args) {
+        int sec;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите число");
+        sec = scanner.nextInt();
+
+        if (sec > 0 && sec < 28_800) {
+            howManyHours(sec);
+        } else {
+            System.out.println("У тебя плохое зрение, или попроси у начальника выше ЗП");
+        }
+    }
+    public static void howManyHours(int sec) {
+        int hour = sec / (60 * 60);
+        System.out.println("До конца рабочего дня осталось полных часов: " + hour);
+        System.out.println("Количество секунд до конца рабочего дня: " + sec);
+    }
+}
